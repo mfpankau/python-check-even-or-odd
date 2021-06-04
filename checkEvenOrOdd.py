@@ -4,15 +4,15 @@ def makeFile(min, max):
     f = open('temp.py', 'w')
     f.write('def main(val):\n\tif(val == ' + str(min) + ') :\n')
     if min % 2 == 0:
-        f.write('\t\tprint('Even')\n')
+        f.write('''\t\tprint('Even')\n''')
     else:
-        f.write('\t\tprint('Odd')\n')
+        f.write('''\t\tprint('Odd')\n''')
     for i in range(min + 1, max + 1):
         f.write('\telif(val == ' + str(i) + '):\n')
         if i % 2 == 0:
-            f.write('\t\tprint('Even')\n')
+            f.write('''\t\tprint('Even')\n''')
             continue
-        f.write('\t\tprint('Odd')\n')
+        f.write('''\t\tprint('Odd')\n''')
 
 
 if __name__ == '__main__':
