@@ -1,5 +1,5 @@
 import sys
-
+import random
 def makeFile(min, max):
     f = open('temp.py', 'w')
     f.write('def main(val):\n\tif(val == ' + str(min) + ') :\n')
@@ -20,5 +20,8 @@ if __name__ == '__main__':
         print('usage: ' + sys.argv[0] + ' <value to check>')
     elif len(sys.argv) == 2:
         makeFile(int(sys.argv[1]) - 10, int(sys.argv[1]) + 10)
-        import temp
-        temp.main(int(sys.argv[1]))
+        if random.randint(int(sys.argv[1]) - 3, int(sys.argv[1]) + 3) == int(sys.argv[1]):
+            import temp
+            temp.main(int(sys.argv[1]))
+        else:
+            print('I dont know, try again?')
